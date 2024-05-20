@@ -2,20 +2,22 @@ import pytest
 
 from alumno import Alumno
 
-def test_alumno():
-    alumno = Alumno('Juan')
+@pytest.fixture
+def alumno():
+    return Alumno('Juan')
+
+def test_alumno(alumno):
     assert alumno.read() == 'Juan'
 
-def test_read():
-    alumno = Alumno('Juan')
+def test_read(alumno):
     assert alumno.read() == 'Juan'
 
-def test_update():
-    alumno = Alumno('Juan')
+def test_update(alumno):
     alumno.update('Pedro')
+
     assert alumno.read() == 'Pedro'
 
-def test_delete():
-    alumno = Alumno('Juan')
+def test_delete(alumno):
     alumno.delete()
+    
     assert alumno.read() == None
