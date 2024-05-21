@@ -19,3 +19,8 @@ def test_ficheroEscribir(fichero):
 
 def test_ficheroLeer2(fichero):
     assert fichero.leer() == DATA
+
+def test_ficheroListaAlumnos(fichero):
+    lista = ListaAlumnos()
+    lista.load(fichero.leer())
+    assert lista.read() == DATA
