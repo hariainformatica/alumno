@@ -3,9 +3,20 @@ class Fichero:
         self.nombre = nombre
 
     def leer(self):
-        with open(self.nombre, 'r') as f:
-            return f.read()
+        try:
+            f = open(self.nombre, 'rt')
+        except FileNotFoundError:
+            return ''
+        with f:
+            return f.readline()
+    
 
     def escribir(self, contenido):
-        with open(self.nombre, 'w') as f:
+        try:
+            f = open(self.nombre, 'wt')
+        except:
+            raise Exception('Error')
+        
+        with f:
             f.write(contenido)
+            return True
