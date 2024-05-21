@@ -30,3 +30,16 @@ def test_listaAlumnoDelete(lista):
     assert len(lista) == 0
 
     assert 'Luis' not in lista
+
+def test_listaRead(lista):
+    lista.agregar('Juan')
+    lista.agregar('Pedro')
+
+    assert lista.read() == 'Juan' + lista.LIMITCHAR + 'Pedro'
+
+def test_listaLoad(lista):
+    lista.load('Juan' + lista.LIMITCHAR + 'Pedro')
+    assert len(lista) == 2
+
+    assert lista[0] == 'Juan'
+    assert lista[1] == 'Pedro'

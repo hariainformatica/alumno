@@ -21,7 +21,7 @@ class ListaAlumnos:
     def load(self, data:str):
         alumnos = data.split(self.LIMITCHAR)
         for alumno in alumnos:
-            self.alumnos.append(Alumno(alumno))
+            self.alumnos.append(alumno)
     
     def update(self, alumno:Alumno, nombre:str):
         for a in self.alumnos:
