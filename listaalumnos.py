@@ -1,6 +1,8 @@
 from alumno import Alumno
 
 class ListaAlumnos:
+    LIMITCHAR = "|&&|"
+
     def __init__(self):
         self.alumnos = []
 
@@ -12,12 +14,12 @@ class ListaAlumnos:
         for alumno in self.alumnos:
             result += alumno
             if alumno != self.alumnos[-1]:
-                result += "|&&|"
+                result += self.LIMITCHAR
 
         return result
     
     def load(self, data:str):
-        alumnos = data.split("|&&|")
+        alumnos = data.split(self.LIMITCHAR)
         for alumno in alumnos:
             self.alumnos.append(Alumno(alumno))
     
