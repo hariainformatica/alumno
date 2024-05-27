@@ -1,4 +1,4 @@
-from alumno import Alumno
+from alumno.alumno import Alumno
 
 class ListaAlumnos:
     LIMITCHAR = "|&&|"

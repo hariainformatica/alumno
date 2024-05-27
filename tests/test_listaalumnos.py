@@ -1,4 +1,4 @@
-from listaalumnos import ListaAlumnos
+from alumno.listaalumnos import ListaAlumnos
 import pytest
 
 @pytest.fixture

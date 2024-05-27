@@ -1,6 +1,6 @@
 import pytest
 
-from alumno import Alumno
+from alumno.alumno import Alumno
 
 @pytest.fixture
 def alumno():

@@ -1,5 +1,5 @@
-from listaalumnos import ListaAlumnos
-from fichero import Fichero
+from alumno.listaalumnos import ListaAlumnos
+from alumno.fichero import Fichero
 import pytest
 import os
 
